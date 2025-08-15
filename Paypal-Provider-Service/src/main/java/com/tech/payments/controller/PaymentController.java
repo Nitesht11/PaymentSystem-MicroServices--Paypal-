@@ -1,9 +1,11 @@
 package com.tech.payments.controller;
 
 import com.tech.payments.Pojo.CreateOrderReq;
+import com.tech.payments.Pojo.Order;
 import com.tech.payments.Service.Interface.PaymentService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -14,17 +16,15 @@ public class PaymentController {
 
     private final PaymentService paymentService;
 
-//    public PaymentController(PaymentService paymentService){
-//        this.paymentService=paymentService;
-//    }
-
     @PostMapping
-    public String createOrder(@RequestBody CreateOrderReq createOrderReq){
+    @ResponseStatus(HttpStatus.CREATED)
+    public Order createOrder(@RequestBody CreateOrderReq createOrderReq){
         log.info("create order:{}", createOrderReq);
 
-        String response = paymentService.createOrder(createOrderReq);
-        return "create order"+ createOrderReq;
+        Order response = paymentService.createOrder(createOrderReq);
+        log.info("response:{}", response);
 
+        return response;
     }
 
     @GetMapping
