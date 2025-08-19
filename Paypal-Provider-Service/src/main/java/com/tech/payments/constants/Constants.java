@@ -10,5 +10,6 @@ public class Constants {
     public static final String SP_NO_SHIPPING = "No-Shipping";
     public static final String UA_PAY_NOW = "Pay_Now";
     public static final String CAPTURE = "CAPTURE";
+    public static final String EMPTY_STRING = " ";
 }
 

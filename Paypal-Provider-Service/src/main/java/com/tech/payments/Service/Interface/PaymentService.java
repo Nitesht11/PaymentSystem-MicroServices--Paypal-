@@ -6,4 +6,8 @@ import com.tech.payments.Pojo.Order;
 public interface PaymentService {
 
     public Order createOrder(CreateOrderReq  req);
+
+    Order getOrder(String orderId);
+
+    Order captureOrder(String orderId);
 }

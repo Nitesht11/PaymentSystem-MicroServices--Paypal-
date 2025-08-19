@@ -11,17 +11,17 @@ import org.springframework.stereotype.Component;
 
 public class JsonUtils {
     private final ObjectMapper objectMapper;
-                                            // toJSon is a wraper with input obj
-   public String  toJson (Object obj){    //  whn try to conv onj to str reqbody any excp come rtn null
-       String  requestBodyAsJson =null;
-       try {
-           requestBodyAsJson = objectMapper.writerWithDefaultPrettyPrinter(
-           ).writeValueAsString(obj);
-       } catch (Exception e) {
-           e.printStackTrace();
-       }
-       return requestBodyAsJson;
-   }
+    // toJSon is a wraper with input obj
+    public String  toJson (Object obj){    //  whn try to conv onj to str reqbody any excp come rtn null
+        String  requestBodyAsJson =null;
+        try {
+            requestBodyAsJson = objectMapper.writerWithDefaultPrettyPrinter(
+            ).writeValueAsString(obj);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return requestBodyAsJson;
+    }
 
 
     /**
@@ -32,14 +32,14 @@ public class JsonUtils {
      * @return the converted object
      */
 
-   public<T> T fromJson(String json, Class<T> clazz){
-       T response = null;
-       try {
-           response =objectMapper.readValue(json,clazz);
-       }catch (Exception e){
-           e.printStackTrace();
-       }
-       return response;
-   }
+    public<T> T fromJson(String json, Class<T> clazz){
+        T response = null;
+        try {
+            response =objectMapper.readValue(json,clazz);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return response;
+    }
 }
 
