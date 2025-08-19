@@ -1,8 +1,13 @@
 package com.tech.payments.Service.Interface;
 
 import com.tech.payments.Pojo.CreateOrderReq;
+import com.tech.payments.Pojo.Order;
 
 public interface PaymentService {
 
-    public String createOrder(CreateOrderReq  req);
+    public Order createOrder(CreateOrderReq  req);
+
+    Order getOrder(String orderId);
+
+    Order captureOrder(String orderId);
 }
