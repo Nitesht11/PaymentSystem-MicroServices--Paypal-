@@ -1,4 +1,4 @@
-package com.tech.payments.Utils;
+package com.tech.payments.Util;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 public class JsonUtils {
     private final ObjectMapper objectMapper;
     // toJSon is a wraper with input obj
-    public String  toJson (Object obj){    //  whn try to conv obj to str reqbody any excp come rtn null
+    public String  toJson (Object obj){    //  whn try to conv onj to str reqbody any excp come rtn null
         String  requestBodyAsJson =null;
         try {
             requestBodyAsJson = objectMapper.writerWithDefaultPrettyPrinter(

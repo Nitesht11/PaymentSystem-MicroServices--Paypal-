@@ -11,5 +11,4 @@ public class CreateOrderReq
     private String returnUrl;
     private String cancelUrl;
 
-
 }
